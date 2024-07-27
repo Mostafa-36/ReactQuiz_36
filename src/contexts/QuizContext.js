@@ -6,8 +6,6 @@ const SEC_PER_QUESTION = 30;
 
 const initialState = {
   questions: [],
-
-  // 'loading', 'error', 'ready', 'active', 'finished'
   status: "loading",
   index: 0,
   answer: null,
@@ -22,7 +20,6 @@ function reducer(state, action) {
     case "dataFailed":
       return { ...state, status: "error" };
     case "start":
-      //console.log({ ...state, status: "active" });
       return {
         ...state,
         status: "active",
@@ -37,10 +34,6 @@ function reducer(state, action) {
           action.payload === currentQuestion.correctOption
             ? state.points + currentQuestion.points
             : state.points,
-        // Number(state.answer) ===
-        // Number(state.questions[state.index].correctOption)
-        //   ? 10
-        //   : -10,
       };
     case "nextQuestion":
       return { ...state, index: state.index + 1, answer: null };
@@ -76,13 +69,6 @@ export default function QuestionsProvider({ children }) {
   );
 
   const numberQuestions = questions.length;
-
-  // useEffect(function () {
-  //   fetch("http://localhost:9000/questions")
-  //     .then((res) => res.json())
-  //     .then((data) => dispatch({ type: "dataReceived", payload: data }))
-  //     .catch((err) => dispatch({ type: "dataFailed" }));
-  // }, []);
 
   useEffect(() => {
     async function getQuestion() {

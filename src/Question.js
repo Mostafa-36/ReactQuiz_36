@@ -2,11 +2,7 @@ import Option from "./components/Option";
 import { useQuestions } from "./contexts/QuizContext";
 
 function Question() {
-  // question={questions[index]}
-  // dispatch={dispatch}
-  // answer={answer}
-  // points={points}
-  const { questions, answer, points, index, dispatch } = useQuestions();
+  const { questions, index } = useQuestions();
   const question = questions[index];
   return (
     <div>

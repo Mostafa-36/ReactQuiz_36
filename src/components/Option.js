@@ -1,4 +1,3 @@
-import { type } from "@testing-library/user-event/dist/type";
 import { useQuestions } from "../contexts/QuizContext";
 
 function Option() {

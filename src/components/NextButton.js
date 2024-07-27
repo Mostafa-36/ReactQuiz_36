@@ -1,12 +1,6 @@
-import { type } from "@testing-library/user-event/dist/type";
 import { useQuestions } from "../contexts/QuizContext";
 
 function NextButton() {
-  // dispatch={dispatch}
-  // answer={answer}
-  // numberQuestions={questions.length}
-  // index={index}
-
   const { dispatch, answer, index, questions } = useQuestions();
   const numberQuestions = questions.length;
 
